@@ -45,63 +45,74 @@
     }
 
     function buildScene(){
-        var floorRadius = 40;
-        var pillarRadius = 1;
-        var pillarHeight = 10;
+        var roomSize = 100;
         var xCenter,xSize,yCenter,ySize,zCenter,zSize,red,green,blue;
         //floor
         xCenter = 0;
-        xSize = floorRadius * 2;
+        xSize = roomSize;
         yCenter = -1;
         ySize = 2;
         zCenter = 0;
-        zSize = floorRadius * 2;
+        zSize = roomSize;
         red = 0.8;
         green = 0.8;
         blue = 0.8;
         cuboid(xCenter,xSize,yCenter,ySize,zCenter,zSize,red,green,blue,)
-        //pillars
-        xCenter = 0 - floorRadius + pillarRadius;
-        xSize = pillarRadius * 2;
-        yCenter = pillarHeight * 0.5;
-        ySize = pillarHeight;
-        zCenter = 0 - floorRadius + pillarRadius;
-        zSize = pillarRadius * 2;
-        red = 1;
-        green = 0;
-        blue = 0;
-        cuboid(xCenter,xSize,yCenter,ySize,zCenter,zSize,red,green,blue)
-        xCenter = 0 - floorRadius + pillarRadius;
-        xSize = pillarRadius * 2;
-        yCenter = pillarHeight * 0.5;
-        ySize = pillarHeight;
-        zCenter = 0 + floorRadius - pillarRadius;
-        zSize = pillarRadius * 2;
-        red = 0;
-        green = 1;
-        blue = 0;
-        cuboid(xCenter,xSize,yCenter,ySize,zCenter,zSize,red,green,blue)
-        xCenter = 0 + floorRadius - pillarRadius;
-        xSize = pillarRadius * 2;
-        yCenter = pillarHeight * 0.5;
-        ySize = pillarHeight;
-        zCenter = 0 - floorRadius + pillarRadius;
-        zSize = pillarRadius * 2;
-        red = 1;
-        green = 1;
-        blue = 0;
-        cuboid(xCenter,xSize,yCenter,ySize,zCenter,zSize,red,green,blue)
-        xCenter = 0 + floorRadius - pillarRadius;
-        xSize = pillarRadius * 2;
-        yCenter = pillarHeight * 0.5;
-        ySize = pillarHeight;
-        zCenter = 0 + floorRadius - pillarRadius;
-        zSize = pillarRadius * 2;
-        red = 0;
-        green = 0;
-        blue = 1;
-        cuboid(xCenter,xSize,yCenter,ySize,zCenter,zSize,red,green,blue)
-
+        //roof
+        xCenter = 0;
+        xSize = roomSize;
+        yCenter = roomSize + 1;
+        ySize = 2;
+        zCenter = 0;
+        zSize = roomSize;
+        red = 0.8;
+        green = 0.8;
+        blue = 0.8;
+        cuboid(xCenter,xSize,yCenter,ySize,zCenter,zSize,red,green,blue,)
+        //wall x
+        xCenter = (roomSize * 0.5) + 1;
+        xSize = 2;
+        yCenter = roomSize * 0.5;
+        ySize = roomSize;
+        zCenter = 0;
+        zSize = roomSize;
+        red = 0.7;
+        green = 0.7;
+        blue = 0.7;
+        cuboid(xCenter,xSize,yCenter,ySize,zCenter,zSize,red,green,blue,)
+        //wall -x
+        xCenter = 0 - (roomSize * 0.5) - 1;
+        xSize = 2;
+        yCenter = roomSize * 0.5;
+        ySize = roomSize;
+        zCenter = 0;
+        zSize = roomSize;
+        red = 0.7;
+        green = 0.7;
+        blue = 0.7;
+        cuboid(xCenter,xSize,yCenter,ySize,zCenter,zSize,red,green,blue,)
+        //wall +z
+        xCenter = 0;
+        xSize = roomSize;
+        yCenter = roomSize * 0.5;
+        ySize = roomSize;
+        zCenter = (roomSize * 0.5) + 1;
+        zSize = 2;
+        red = 0.6;
+        green = 0.6;
+        blue = 0.6;
+        cuboid(xCenter,xSize,yCenter,ySize,zCenter,zSize,red,green,blue,)
+        //wall -z
+        xCenter = 0;
+        xSize = roomSize;
+        yCenter = roomSize * 0.5;
+        ySize = roomSize;
+        zCenter = 0 - (roomSize * 0.5) - 1;
+        zSize = 2;
+        red = 0.6;
+        green = 0.6;
+        blue = 0.6;
+        cuboid(xCenter,xSize,yCenter,ySize,zCenter,zSize,red,green,blue,)
     }
 
     function cuboid(xCenter,xSize,yCenter,ySize,zCenter,zSize,red,green,blue){
